@@ -1,6 +1,8 @@
-A sample project with JUnit 5.8 showcasing JUnit5 testing, including native test suites. 
+A sample project with JUnit 5.8 showcasing JUnit5 testing, including native test suites and test coverage. 
 
 This project is a Maven project that can be cloned via `git clone` and at the same time also an Eclipse project. 
+
+`mvn test` runs all test cases declared in class `AllTests` and creates via JaCoCo a test coverage report that can be found in `target/site/jacoco/`. 
 
 Import to Eclipse via: 
 
@@ -16,6 +18,6 @@ Import to Eclipse via:
 1. Next *(to confirm* Import existing Eclipse projects *)*
 1. Finish
 
-This should have given you a new project: `junit5demoWithMaven`
+This should have given you a new project: `junit5demoWithMaven` (Note: Eclipse did not check out the root directory with `README.md` and `LICENSE` files, only the directory `junit5demoWithMaven` containing the actual Eclipse project.)
 
-(Note: Eclipse did not check out the root directory with `README.md` and `LICENSE` files, only the directory `junit5demoWithMaven` containing the actual Eclipse project).
+In Eclipse, you can run test cases using Eclipse's GUI test runner (Run as > JUnit Test) or via Maven (Run as > Maven test) or simply use Maven on the command line.
