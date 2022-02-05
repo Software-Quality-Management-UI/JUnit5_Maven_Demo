@@ -3,7 +3,7 @@ package is.hi.cs.junit5demo;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MoneyTestWithFixture {
+class MoneyTestWithFixture {
 	private Money m12;
 	private Money m14;
 
@@ -14,7 +14,7 @@ public class MoneyTestWithFixture {
 	}
 
 	@Test
-	public void testEquals() {
+	void testEquals() {
 		Money equalMoney = new Money(12);
 		assertTrue(m12.equals(m12));
 		assertTrue(m12.equals(equalMoney));
@@ -22,7 +22,7 @@ public class MoneyTestWithFixture {
 	}
 
 	@Test
-	public void testAdd() {
+	void testAdd() {
 		Money expected = new Money(26);
 		assertEquals(expected, m12.add(m14));
 	}

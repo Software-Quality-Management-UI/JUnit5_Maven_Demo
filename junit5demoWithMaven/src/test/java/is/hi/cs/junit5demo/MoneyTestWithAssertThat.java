@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class MoneyTestWithAssertThat {
+class MoneyTestWithAssertThat {
 
 	private Money m12;
 	private Money m14;
@@ -17,7 +17,7 @@ public class MoneyTestWithAssertThat {
 	}
 
 	@Test
-	public void testEqualsUsingFixture() {
+	void testEqualsUsingFixture() {
 		Money equalMoney = new Money(12);
 		assertThat(m12, is(equalTo(m12)));
 		assertThat(m12, is(equalTo(equalMoney)));
@@ -25,7 +25,7 @@ public class MoneyTestWithAssertThat {
 	}
 
 	@Test
-	public void testAddUsingFixture() {
+	void testAddUsingFixture() {
 		Money expected = new Money(26);
 		assertThat(m12.add(m14), is(equalTo(expected)));
 	}

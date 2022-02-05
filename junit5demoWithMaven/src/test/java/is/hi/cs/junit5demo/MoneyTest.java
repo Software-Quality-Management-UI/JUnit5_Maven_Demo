@@ -3,10 +3,10 @@ package is.hi.cs.junit5demo;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MoneyTest {
+class MoneyTest {
 
 	@Test
-	public void testEquals() {
+	void testEquals() {
 		Money m12 = new Money(12);
 		Money m14 = new Money(14);
 		Money equalMoney = new Money(12);
@@ -16,7 +16,7 @@ public class MoneyTest {
 	}
 
 	@Test
-	public void testAdd() {
+	void testAdd() {
 		Money m12 = new Money(12);
 		Money m14 = new Money(14);
 		Money expected = new Money(26);
