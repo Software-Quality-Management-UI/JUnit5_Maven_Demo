@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>is.hi.cs</groupId>
+	<artifactId>junit5demoWithMaven</artifactId>
+	<version>1.1.0</version>
+
+	<name>Demo of Junit5 as an Eclipse project that runs also with Maven</name>
+
+	<developers>
+		<developer>
+			<name>Helmut Neukirchen</name>
+			<url>http://uni.hi.is/helmut/</url>
+		</developer>
+	</developers>
+	<organization>
+		<name>University of Iceland</name>
+		<url>https://www.hi.is/</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://gitlab.com/helmut.neukirchen/junit5demowithmaven.git</connection>
+		<url>https://gitlab.com/helmut.neukirchen/junit5demowithmaven</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Custom property "java.version"; can be referenced via ${ } -->
+		<java.version>8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
+	</properties>
+
+	<!-- The dependencyManagement block that follows below is a central place 
+		to set versions for dependencies so that they can later in the dependencies 
+		block be used without bothering about versions -->
+	<!-- A BOM (Bill Of Materials) that is referenced inside the dependencyManagement 
+		block is an external POM that sets for a bigger set of dependencies (the 
+		Bill Of Materials) the versions so that they fit together -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- JUnit5 consists of packages junit-jupiter 5.x.y and junit-platform 
+				1.X.Y and the x and X need to fit together. This is achieved by this BOM -->
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>5.8.2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<!-- junit-jupiter includes junit-jupiter-api/-engine/-params Needed for 
+			the actual annotations and asserts -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- junit-platform-suite includes junit-platform-suite-api/-engine Needed 
+			for the suite annotations -->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-suite</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- assertThat and hamcrest matchers -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+
+
+	<build>
+		<plugins>
+
+			<!-- maven-compiler-plugin >= 3.6.0 needed for property maven.compiler.release -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.9.0</version>
+			</plugin>
+
+			<!-- surefire >= 2.22.0 needed for JUnit5 -->
+			<!-- We also want to pass project specific configurations -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<!-- >=2.22.0 needed for JUnit5 -->
+				<version>2.22.2</version>
+				<configuration>
+					<!-- Includes can be overriden on commandline using mvn test -Dtest=NameOfTestClass 
+						- however -Dtest does not work if the class contains a JUnit5-style suite -->
+					<includes>
+						<include>AllTests</include>
+					</includes>
+				</configuration>
+			</plugin>
+
+			<!-- Code coverage -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version>
+				<executions>
+					<execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>post-unit-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
