@@ -18,7 +18,7 @@ public class MoneyTestWithAssertThat {
 	}
 
 	@Test
-	void testEqualsUsingFixture() {
+	public void testEqualsUsingFixture() {
 		Money equalMoney = new Money(12);
 		assertThat(m12, is(equalTo(m12)));
 		assertThat(m12, is(equalTo(equalMoney)));
@@ -26,7 +26,7 @@ public class MoneyTestWithAssertThat {
 	}
 
 	@Test
-	void testAddUsingFixture() {
+	public void testAddUsingFixture() {
 		Money expected = new Money(26);
 		assertThat(m12.add(m14), is(equalTo(expected)));
 	}

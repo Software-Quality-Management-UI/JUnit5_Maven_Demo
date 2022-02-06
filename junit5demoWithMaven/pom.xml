@@ -9,7 +9,7 @@
 	<artifactId>junit5demoWithMaven</artifactId>
 	<version>1.1.0</version>
 
-	<name>Demo of Junit5 with MAven that also is an Eclipse project</name>
+	<name>Demo of Junit5 with Maven that also is an Eclipse project</name>
 
 	<developers>
 		<developer>
@@ -111,7 +111,7 @@
 					<!-- Includes can be overriden on commandline using mvn test -Dtest=NameOfTestClass 
 						- however -Dtest does not work if the class contains a JUnit5-style suite -->
 					<includes>
-						<include>AllTests</include>
+						<include>AlltestsUsingSelectClasses</include>
 					</includes>
 				</configuration>
 			</plugin>
