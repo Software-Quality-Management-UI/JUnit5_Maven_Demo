@@ -4,7 +4,7 @@ import org.junit.platform.suite.api.*;
 
 @Suite
 @SelectClasses({ MoneyTest.class, MoneyTestWithFixture.class, MoneyTestWithAssertThat.class, DivisionByZeroTest.class })
-class AllTests {
-	// the class remains completely empty,
+public class AlltestsUsingSelectClasses { // Class name uses by intention lower case "test" to avoid being included by .*Test.* pattern!
+	// The class remains completely empty,
 	// being used only as a holder for the above annotations
 }

@@ -5,7 +5,8 @@ import org.junit.jupiter.api.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-class MoneyTestWithAssertThat {
+@Tag("UsingHamcrest")
+public class MoneyTestWithAssertThat {
 
 	private Money m12;
 	private Money m14;
