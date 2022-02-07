@@ -122,20 +122,46 @@
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.7</version>
 				<executions>
-				<!-- Prepare-agent called during initialize phase in order to instrument code -->
+					<!-- Prepare-agent called at initialize phase in order to instrument code -->
 					<execution>
 						<id>pre-unit-test</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
-					<!-- report generation (in target/site/jacoco/) bound to test phase (instead of verify phase) -->
+					
+					<!-- Make report generation (in target/site/jacoco/) bound to test phase (instead of verify phase) -->
 					<execution>
 						<id>post-unit-test</id>
 						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
+					</execution>
+					
+					<!-- Checks when running mvn verify whether coverage goal has been met; abort build, if not -->
+					<execution>
+						<id>verify-eightypercentcoverage</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+								<!-- Coverage on BUNDLE (whole program average) needs to be reached, opposed to, e.g. every class on its own  -->
+									<element>BUNDLE</element>
+									<limits>
+										<limit>
+											<counter>BRANCH</counter>
+											<!-- Ratio (opposed to, e.g., absolute values -->
+											<value>COVEREDRATIO</value>
+											<!-- minimum=at least, value=80 percent -->
+											<minimum>0.8</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
