@@ -36,10 +36,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- JUnit5 needs at least Java 8 -->
 		<!-- Custom property "java.version"; can be referenced via ${ } -->
-		<java.version>8</java.version>
+		<java.version>8</java.version> <!-- If "8" does not work, try "1.8" or something newer, e.g. "11" -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.compiler.release>${java.version}</maven.compiler.release>
+<!-- 		<maven.compiler.release>${java.version}</maven.compiler.release> --> <!-- Commented out as it is only understood by JDK >= 9 -->
 	</properties>
 
 	<build>
