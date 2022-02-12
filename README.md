@@ -19,4 +19,4 @@ Import to Eclipse via:
 1. Next *(to confirm* Import existing Eclipse projects *)*
 1. Finish
 
-This should have given you a new project: `CIdemo2022`
+This should have given you a new project: `CIdemo2022`. Note that Eclipse does by default not show files starting with a dot, e.g. `.gitlab-ci.yml` -- you need to change the *Filters...* setting in the *Package Explorer*.
