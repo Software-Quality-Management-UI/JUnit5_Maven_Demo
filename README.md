@@ -1,8 +1,9 @@
-A sample project with JUnit 5.8 showcasing JUnit 5 testing, including native test suites and test coverage. 
+A sample project with showcasing Continuous Integration with Maven compiling and running JUnit 5 tests. 
+
+Directory `GitlabCIexamples` contains sample files that can be copied into the `.gitlab-ci.yml` file in the root directory. 
 
 This project is a Maven project that can be cloned via `git clone` and at the same time also an Eclipse project (if you are not using Eclipse, ignore Eclipse configurations stored in `.settings`, `.classpath`,  `.project`). 
 
-`mvn test` runs all test cases declared in class `AllTests` and creates via JaCoCo a test coverage report that can be found in `target/site/jacoco/`. 
 
 Import to Eclipse via: 
 
@@ -18,6 +19,4 @@ Import to Eclipse via:
 1. Next *(to confirm* Import existing Eclipse projects *)*
 1. Finish
 
-This should have given you a new project: `junit5demoWithMaven`
-
-In Eclipse, you can run test cases using Eclipse's GUI test runner (Run as > JUnit Test) or via Maven (Run as > Maven test) or simply use Maven on the command line (but be aware that Eclipse caches files and does not notice if you change files outside of Eclipse unless you press F5 to refresh).
+This should have given you a new project: `CIdemo2022`
