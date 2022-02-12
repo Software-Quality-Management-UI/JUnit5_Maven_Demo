@@ -1,0 +1,18 @@
+# Use Docker image "maven" with Maven v3.8.x and JDK 11
+default:
+  image: maven:3.8-jdk-11
+
+# Define some compile job to be used as build stage (calls Maven)
+mycompile:
+  stage: build
+  # Execute command "mvn compile -–batch mode"
+  script:
+    - mvn compile --batch-mode
+
+# Define some unit test job to be used as (unit) test stage (calls Maven)
+myunittest:
+  # In Gitlab, stage test   # runs after stage build
+  stage: test
+  # Execute mvn test command
+  script:
+    - mvn test --batch-mode
