@@ -1,6 +1,6 @@
 # Use Docker image "maven" with Maven v3.8.x and JDK 11
 default:
-  image: maven:3.8-jdk-11
+  image: maven:3.8-jdk-11-slim
 
 # Define some compile job to be used as build stage (calls Maven)
 mycompile:
