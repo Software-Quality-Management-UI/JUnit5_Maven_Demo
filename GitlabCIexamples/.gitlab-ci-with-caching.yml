@@ -8,7 +8,8 @@ default:
     paths:
       - .m2/repository
 
-# While variables are passed to all jobs definitions, they are not defined within "defaul" section
+# While variables are passed to all jobs definitions, 
+# they are not defined within "default" section
 variables:
   # MAVEN_OPTS are command line parameters passed via the JVM to Maven
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"  
