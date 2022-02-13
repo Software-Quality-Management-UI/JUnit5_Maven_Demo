@@ -12,7 +12,7 @@ public class Money {
 	  }
 
 	  public Money add(Money m) {
-	    return new Money(amount - m.getAmount());
+	    return new Money(amount + m.getAmount());
 	  }
 
 	  public boolean equals(Object o) {
