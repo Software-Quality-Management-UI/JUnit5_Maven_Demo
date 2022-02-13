@@ -1,6 +1,7 @@
 # CI demo
 
 [![pipeline status](https://gitlab.com/helmut.neukirchen/cidemo2022/badges/main/pipeline.svg)](https://gitlab.com/helmut.neukirchen/cidemo2022/-/commits/main)
+[![coverage report](https://gitlab.com/helmut.neukirchen/cidemo2022/badges/main/coverage.svg)](https://gitlab.com/helmut.neukirchen/cidemo2022/-/commits/main)
 
 A sample project with showcasing Continuous Integration with Maven compiling and running JUnit 5 tests. 
 
