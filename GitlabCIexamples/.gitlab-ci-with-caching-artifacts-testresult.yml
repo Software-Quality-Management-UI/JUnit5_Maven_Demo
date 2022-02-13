@@ -41,3 +41,9 @@ myunittest:
   # Use artifact files from mycompile build phase as input  
   dependencies:
     - mycompile
+  artifacts:
+    when: always # We want this artifact also when pipeline (=tests) failed.
+    reports: # Special report artifact type
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml
