@@ -5,7 +5,7 @@
 
 A sample project with showcasing Continuous Integration with Maven compiling and running JUnit 5 tests. 
 
-Directory `GitlabCIexamples` contains sample files that can be copied into the `.gitlab-ci.yml` file in the root directory. 
+Easiest is to click the `Fork` to get a copy that runs in GitLab and can do CI/CD. To this aim, directory `GitlabCIexamples` contains sample files that can be copied into the `.gitlab-ci.yml` file in the root directory. 
 
 This project is a Maven project that can be cloned via `git clone` and at the same time also an Eclipse project (if you are not using Eclipse, ignore Eclipse configurations stored in `.settings`, `.classpath`,  `.project`). 
 
