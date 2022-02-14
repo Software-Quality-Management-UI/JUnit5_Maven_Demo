@@ -43,7 +43,7 @@ myunittest:
   # Let GitLab parse code coverage from runner console and display it in web interface. 
   # The RegEx is greedy and matches the first percentage (which is instruction coverage, not branch coverage)
   # The parsed line is of the format: "Total	6 of 37	83%	1 of 4	75%"	
-  coverage: '/Total.*>([0-9]{1,3})%/' #  ".*?"=non-greedy (i.e. first percentage) / ".*" greedy (matches as much as possible, i.e. from the last percentage only the last digit and the percent signe) /  
+  coverage: '/Total.*?>([0-9]{1,3})%/' #  ".*?"=non-greedy (i.e. first percentage) / ".*" greedy (matches as much as possible, i.e. from the last percentage only the last digit and the percent signe) /  
   # Use artifact files from mycompile build phase as input  
   dependencies:
     - mycompile
