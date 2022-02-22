@@ -173,7 +173,7 @@
 											<!-- Ratio (opposed to, e.g., absolute values -->
 											<value>COVEREDRATIO</value>
 											<!-- minimum=at least, value=80 percent -->
-											<minimum>0.8</minimum>
+											<minimum>0.7</minimum>
 										</limit>
 									</limits>
 								</rule>
