@@ -9,7 +9,7 @@ The files in `.settings`, `.classpath`,  `.project` are specific for the Eclipse
 
 If you want to use this project with a Java IDE:
 - IntelliJ: Start a new project from version control, i.e. clone this project. IntelliJ should notice that this is an Eclipse project and a Maven project and asks you about the project style to use. It does not matter what you chose, because both styles give you exactly the same project setup.
-- Visual Studio Code: Clone it (Help -> Show All Commands -> Type in: `Git: Clone`. This should be enough. However, notice that the current JUnit extension of VS Code may not recognise the native test suite concept.
+- Visual Studio Code: Clone it (Help -> Show All Commands -> Type in: `Git: Clone`. This should be enough. However, notice that the current JUnit extension of VS Code may not recognise the native test suite concept that has been introduced in JUnit 5.8.
 - Eclipse: see steps below:
 
 Import to Eclipse via: 
