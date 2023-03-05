@@ -3,7 +3,7 @@ package is.hi.cs.junit5demo;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MoneyTestWithFixture {
+public class MoneyWithFixtureTest {
 	private Money m12;
 	private Money m14;
 

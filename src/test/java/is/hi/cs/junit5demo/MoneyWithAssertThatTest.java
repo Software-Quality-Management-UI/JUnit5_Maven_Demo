@@ -6,7 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 @Tag("UsingHamcrest")
-public class MoneyTestWithAssertThat {
+public class MoneyWithAssertThatTest {
 
 	private Money m12;
 	private Money m14;
