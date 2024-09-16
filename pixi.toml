@@ -1,0 +1,13 @@
+[project]
+authors = ["Rohit Goswami <rog32 [at] hi.is>", "Helmut Neukirchen <helmut [at] hi.is>"]
+channels = ["conda-forge"]
+description = "Sample project for JUnit 5"
+name = "junit5demowithmaven"
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+version = "1.1.0"
+
+[tasks]
+
+[dependencies]
+maven = ">=3.9.9,<4"
+openjdk = "==11.0.23"
