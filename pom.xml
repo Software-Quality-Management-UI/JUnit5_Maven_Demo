@@ -41,8 +41,8 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.version}</maven.compiler.release>
-    <!-- Property defining version for git-code-format -->
-    <git-code-format-maven-plugin.version>5.3</git-code-format-maven-plugin.version>
+    <!-- Property defining version for spotless -->
+    <spotless.version>2.43.0</spotless.version>
   </properties>
   <!-- The dependencyManagement block that follows below is a central place
 		to set versions for dependencies so that they can later in the dependencies
@@ -154,34 +154,55 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>com.cosium.code</groupId>
-        <artifactId>git-code-format-maven-plugin</artifactId>
-        <version>${git-code-format-maven-plugin.version}</version>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>${spotless.version}</version>
+        <configuration>
+          <!-- optional: limit format enforcement to just the files changed by this feature branch -->
+          <ratchetFrom>origin/main</ratchetFrom>
+          <formats>
+            <!-- you can define as many formats as you want, each is independent -->
+            <format>
+              <!-- define the files to apply to -->
+              <includes>
+                <include>.gitattributes</include>
+                <include>.gitignore</include>
+              </includes>
+              <!-- define the steps to apply to those files -->
+              <trimTrailingWhitespace/>
+              <endWithNewline/>
+              <indent>
+                <tabs>true</tabs>
+                <spacesPerTab>4</spacesPerTab>
+              </indent>
+            </format>
+          </formats>
+          <!-- define a language-specific format -->
+          <java>
+            <!-- no need to specify files, inferred automatically, but you can if you want -->
+            <!-- apply a specific flavor of google-java-format and reflow long strings -->
+            <googleJavaFormat>
+              <version>1.8</version>
+              <style>AOSP</style>
+              <reflowLongStrings>true</reflowLongStrings>
+              <formatJavadoc>false</formatJavadoc>
+            </googleJavaFormat>
+            <!-- make sure every file has the following copyright header.
+        optionally, Spotless can set copyright years by digging
+        through git history (see "license" section below) -->
+            <licenseHeader>
+              <content>/* (C)$YEAR */</content>
+              <!-- or <file>${project.basedir}/license-header</file> -->
+            </licenseHeader>
+          </java>
+        </configuration>
         <executions>
-          <!-- On commit, format the modified files -->
           <execution>
-            <id>install-formatter-hook</id>
             <goals>
-              <goal>install-hooks</goal>
-            </goals>
-          </execution>
-          <!-- On Maven verify phase, fail if any file
-        (including unmodified) is badly formatted -->
-          <execution>
-            <id>validate-code-format</id>
-            <goals>
-              <goal>validate-code-format</goal>
+              <goal>check</goal>
             </goals>
           </execution>
         </executions>
-        <dependencies>
-          <!-- Enable https://github.com/google/google-java-format -->
-          <dependency>
-            <groupId>com.cosium.code</groupId>
-            <artifactId>google-java-format</artifactId>
-            <version>${git-code-format-maven-plugin.version}</version>
-          </dependency>
-        </dependencies>
       </plugin>
       <!-- Web site generation -->
       <plugin>
