@@ -1,7 +1,7 @@
 # CI demo
 
-[![pipeline status](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/pipeline.svg)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/commits/cidemo)
-[![coverage report](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/coverage.svg)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/commits/cidemo)
+[![pipeline status](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/pipeline.svg)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/tree/cidemo)
+[![coverage report](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/coverage.svg)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/tree/cidemo)
 
 A sample project with JUnit 5.11 showcasing JUnit 5 testing, including native
 test suites and test coverage. Reproducibility of the environment is guaranteed
