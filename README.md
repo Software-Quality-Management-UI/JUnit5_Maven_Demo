@@ -1,6 +1,15 @@
+# CI demo
+
+[![pipeline status](https://gitlab.com/helmut.neukirchen/cidemo2022/badges/main/pipeline.svg)](https://gitlab.com/helmut.neukirchen/cidemo2022/-/commits/main)
+[![coverage report](https://gitlab.com/helmut.neukirchen/cidemo2022/badges/main/coverage.svg)](https://gitlab.com/helmut.neukirchen/cidemo2022/-/commits/main)
+
 A sample project with JUnit 5.11 showcasing JUnit 5 testing, including native
 test suites and test coverage. Reproducibility of the environment is guaranteed
 with `pixi` and the `conda-ecosystem`.
+
+Includes Continuous Integration with Maven compiling and running JUnit 5 tests. 
+
+Easiest is to click the `Fork` to get a copy that runs in GitLab and can do CI/CD, though the branch settings need to be updated. To this aim, directory `GitlabCIexamples` contains sample files that can be copied into the `.gitlab-ci.yml` file in the root directory. 
 
 This project is a Maven project that can be cloned via `git clone` and also be
 used within IDEs.
@@ -41,3 +50,5 @@ change files outside of Eclipse unless you press F5 to refresh).
 
 Some paths may need to be setup to use the `pixi` configured `java` and `maven`,
 as should have been completed for the previous assignment.
+
+Note that Eclipse does by default not show files starting with a dot, e.g. `.gitlab-ci.yml` -- you need to change the *Filters...* setting in the *Package Explorer*.
