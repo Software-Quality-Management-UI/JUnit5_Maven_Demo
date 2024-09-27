@@ -1,6 +1,6 @@
 # CI demo
 
-[![pipeline status](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/pipeline.svg)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/tree/cidemo)
+[![pipeline status](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/pipeline.svg?ignore_skipped=true)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/tree/cidemo)
 [![coverage report](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/badges/cidemo/coverage.svg)](https://gitlab.com/tolvunarfraedi/hbv505m_2024/junit5demowithmaven/-/tree/cidemo)
 
 A sample project with JUnit 5.11 showcasing JUnit 5 testing, including native
@@ -8,6 +8,7 @@ test suites and test coverage. Reproducibility of the environment is guaranteed
 with `pixi` and the `conda-ecosystem`.
 
 Includes Continuous Integration with Maven compiling and running JUnit 5 tests.
+The documentation is [here](http://tolvunarfraedi.gitlab.io/hbv505m_2024/junit5demowithmaven/): http://tolvunarfraedi.gitlab.io/hbv505m_2024/junit5demowithmaven/
 
 Easiest is to click the `Fork` to get a copy that runs in GitLab and can do CI/CD, though the branch settings need to be updated. To this aim, directory `GitlabCIexamples` contains sample files that can be copied into the `.gitlab-ci.yml` file in the root directory.
 
