@@ -303,6 +303,49 @@
           </reportSet>
         </reportSets>
       </plugin>
+      <!-- Checkstyle report -->
+      <!-- As we did in the build part already set the versions, there is no need to set them here again -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <!-- Use Sun/Oracle coding convention -->
+          <configLocation>sun_checks.xml</configLocation>
+          <!-- Use custom suppression -->
+          <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+        </configuration>
+      </plugin>
+      <!-- Java cross referencing, used by other reporting tools to show sources -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>3.1.1</version>
+      </plugin>
+      <!-- PMD report -->
+      <!-- As we did in the build part already set the versions, there is no need to set them here again -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
+          <rulesets>
+            <!-- Use the not-so-strict Maven-PMD-plugin default ruleset and in addition the stricter official PMD rule sets (e.g. Best Practises and Code Style), add the XML snippet below to the above XML -->
+            <ruleset>/rulesets/java/maven-pmd-plugin-default.xml</ruleset>
+            <ruleset>/category/java/bestpractices.xml</ruleset>
+            <ruleset>/category/java/codestyle.xml</ruleset>
+          </rulesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.5.3.0</version>
+        <configuration>
+          <!-- Try hard: max efforts (needs more memory and runtime) -->
+          <effort>Max</effort>
+          <!-- Report even low priority issues -->
+          <threshold>Low</threshold>
+        </configuration>
+      </plugin>
     </plugins>
   </reporting>
 </project>
