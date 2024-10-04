@@ -204,6 +204,28 @@
           </execution>
         </executions>
       </plugin>
+      <!-- PMD can be called via mvn pmd:pmd pmd:cpd -->
+      <!-- See https://maven.apache.org/plugins/maven-pmd-plugin/ -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.23.0</version>
+      </plugin>
+      <!-- Checkstyle is called via mvn checkstyle:check, but this can fail -->
+      <!-- See https://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.5.0</version>
+        <!-- Use the latest Checkstyle binary -->
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>10.18.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
       <!-- Web site generation -->
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
